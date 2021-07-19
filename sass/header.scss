@@ -1,0 +1,83 @@
+// Color Pallet
+$blue: rgb(4, 120, 247);
+$light-blue: rgb(36, 140, 251);
+$gray: rgb(239, 243, 248);
+$medium-gray: rgb(190, 191, 195);
+$dark-gray: rgb(132, 140, 158);
+$white: rgb(255, 255, 255);
+$black: rgb(21, 28, 57);
+$low-black: rgb(64, 68, 85);
+$yellow: rgb(255, 231, 150);
+$red: rgb(217, 138, 140);
+
+// Functions
+@function calcRem($px) {
+	$rem: $px / 10 + rem;
+	@return $rem;
+}
+
+header {
+	width: 100%;
+	height: 6rem;
+
+	margin-bottom: calcRem(60);
+
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.settings i {
+		margin-left: calcRem(22);
+		color: $blue;
+
+		font-size: calcRem(30);
+
+		cursor: pointer;
+	}
+
+	nav {
+		height: 100%;
+
+		ul {
+			height: 100%;
+
+			li {
+				display: inline-block;
+				margin-left: calcRem(22);
+				height: 100%;
+
+				a {
+					color: $dark-gray;
+					font-weight: 500;
+					font-size: calcRem(16);
+
+					height: 100%;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				a:hover {
+					border-bottom: calcRem(2) solid $light-blue;
+					color: $black;
+				}
+			}
+		}
+	}
+
+	.icons {
+		i {
+			margin-left: calcRem(16);
+
+			font-size: calcRem(30);
+
+			cursor: pointer;
+		}
+
+		i:last-child {
+			margin-right: calcRem(22);
+		}
+	}
+}

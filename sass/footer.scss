@@ -1,0 +1,15 @@
+// Functions
+@function calcRem($px) {
+	$rem: $px / 10 + rem;
+	@return $rem;
+}
+
+footer {
+	margin-top: calcRem(200);
+	margin-bottom: calcRem(20);
+
+	small {
+		font-size: calcRem(18);
+		opacity: 0.5;
+	}
+}

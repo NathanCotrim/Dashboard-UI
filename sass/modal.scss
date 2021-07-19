@@ -1,0 +1,151 @@
+// Color Pallet
+$blue: rgb(4, 120, 247);
+$light-blue: rgb(36, 140, 251);
+$gray: rgb(239, 243, 248);
+$medium-gray: rgb(190, 191, 195);
+$dark-gray: rgb(132, 140, 158);
+$white: rgb(255, 255, 255);
+$dark-blue: rgb(21, 28, 57);
+$low-black: rgb(64, 68, 85);
+$yellow: rgb(255, 196, 0);
+$purple: rgb(190, 84, 209);
+
+// Functions
+@function calcRem($px) {
+	$rem: $px / 10 + rem;
+	@return $rem;
+}
+
+.modal-button {
+	position: fixed;
+	right: calcRem(22);
+	bottom: calcRem(22);
+
+	clip-path: circle();
+	background-color: $dark-blue;
+
+	font-size: calcRem(52);
+	font-weight: normal;
+	color: $white;
+
+	width: calcRem(66);
+	height: calcRem(66);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+
+	i {
+		height: 60%;
+	}
+
+	i:not(.active) {
+		display: none;
+	}
+}
+
+.modal-button.rotate {
+	animation: rotate 0.6s;
+}
+
+.modal-button.rotate-reverse {
+	animation: rotate-reverse 0.6s;
+}
+
+#modal-wrapper.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+#modal-wrapper {
+	opacity: 0;
+	visibility: hidden;
+
+	position: fixed;
+	right: calcRem(100);
+	bottom: calcRem(100);
+
+	width: calcRem(360);
+	height: calcRem(300);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: calcRem(18);
+
+	background-color: $dark-blue;
+	padding: calcRem(8);
+
+	.modal {
+		width: 84%;
+		height: 100%;
+
+		display: grid;
+		grid-template-rows: repeat(3, 1fr);
+
+		.modal-item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			width: 100%;
+			padding: calcRem(14);
+
+			.icon-title {
+				display: flex;
+				align-items: flex-end;
+				justify-content: space-between;
+
+				height: 40%;
+				cursor: pointer;
+
+				i {
+					font-size: calcRem(48);
+				}
+
+				p {
+					margin-left: calcRem(18);
+					font-size: calcRem(22);
+					color: $white;
+				}
+			}
+
+			i {
+				font-size: calcRem(32);
+				cursor: pointer;
+			}
+		}
+
+		.modal-item:first-child .icon-title i {
+			color: $blue;
+		}
+
+		.modal-item:nth-child(2) .icon-title i {
+			color: $purple;
+		}
+
+		.modal-item:last-child .icon-title i {
+			color: $yellow;
+		}
+
+		.modal-item:first-child,
+		.modal-item:nth-child(2) {
+			border-bottom: 2px solid rgba(190, 191, 195, 0.6);
+		}
+	}
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate-reverse {
+	100% {
+		transform: rotate(-360deg);
+	}
+}

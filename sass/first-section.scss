@@ -1,0 +1,115 @@
+// Color Pallet
+$blue: rgb(4, 120, 247);
+$light-blue: rgb(36, 140, 251);
+$gray: rgb(239, 243, 248);
+$medium-gray: rgb(190, 191, 195);
+$dark-gray: rgb(132, 140, 158);
+$white: rgb(255, 255, 255);
+$black: rgb(21, 28, 57);
+$low-black: rgb(64, 68, 85);
+$yellow: rgb(255, 231, 150);
+$red: rgb(217, 138, 140);
+
+// Functions
+@function calcRem($px) {
+	$rem: $px / 10 + rem;
+	@return $rem;
+}
+
+section#folders {
+	width: 100%;
+
+	margin-bottom: calcRem(80);
+
+	.header-folders {
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		h1 {
+			font-size: calcRem(36);
+			font-weight: 500;
+		}
+
+		button {
+			background-color: $blue;
+			color: $white;
+
+			padding: calcRem(10);
+			border-radius: calcRem(4);
+
+			font-size: calcRem(16);
+
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: rgba(4, 120, 247, 0.8);
+		}
+	}
+
+	.container-folders {
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: calcRem(24);
+
+		margin-top: calcRem(12);
+
+		.folder:first-child .info i {
+			color: $blue;
+		}
+
+		.folder:nth-child(2) .info i {
+			color: rgb(228, 191, 25);
+		}
+
+		.folder:last-child .info i {
+			color: rgb(167, 8, 195);
+		}
+
+		.folder {
+			background-color: $white;
+
+			border-radius: calcRem(8);
+
+			height: calcRem(200);
+
+			display: flex;
+			justify-content: space-between;
+
+			box-shadow: calcRem(3) calcRem(3) rgba(190, 191, 195, 0.2);
+
+			.info {
+				height: 100%;
+
+				margin-left: calcRem(32);
+
+				i {
+					font-size: calcRem(100);
+					margin-bottom: calcRem(18);
+				}
+
+				h2 {
+					font-size: calcRem(24);
+					font-weight: 600;
+
+					margin-bottom: calcRem(8);
+				}
+			}
+
+			i.fa-ellipsis-h {
+				height: 100%;
+
+				margin-right: calcRem(8);
+
+				font-size: calcRem(26);
+
+				cursor: pointer;
+			}
+		}
+	}
+}

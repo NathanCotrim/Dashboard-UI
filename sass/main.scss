@@ -1,0 +1,175 @@
+// Partials
+@import url("../css/header.min.css");
+@import url("../css/first-section.min.css");
+@import url("../css/second-section.min.css");
+@import url("../css/third-section.min.css");
+@import url("../css/footer.min.css");
+@import url("../css/modal.min.css");
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Color Pallet
+$blue: rgb(4, 120, 247);
+$light-blue: rgb(36, 140, 251);
+$gray: rgb(239, 243, 248);
+$medium-gray: rgb(190, 191, 195);
+$dark-gray: rgb(132, 140, 158);
+$white: rgb(255, 255, 255);
+$black: rgb(21, 28, 57);
+$low-black: rgb(64, 68, 85);
+$yellow: rgb(255, 196, 0);
+$red: rgb(217, 138, 140);
+$green: rgb(25, 180, 103);
+
+// Functions
+@function calcRem($px) {
+	$rem: $px / 10 + rem;
+	@return $rem;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-size: 62.5%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: "Josefin Sans", sans-serif;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: $gray;
+}
+
+button,
+input,
+select,
+input::placeholder {
+	font-family: "Poppins", sans-serif;
+	font-size: 62.5%;
+	outline: none;
+	border: none;
+	font-weight: 500;
+}
+
+main {
+	width: 68%;
+	min-width: calcRem(800);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+a {
+	font-family: "Poppins", sans-serif;
+}
+
+small,
+small i {
+	color: $medium-gray;
+	font-weight: 500;
+	font-size: calcRem(14);
+}
+
+html::-webkit-scrollbar-track {
+	background-color: $gray;
+}
+
+html::-webkit-scrollbar {
+	width: calcRem(8);
+
+	background-color: $gray;
+
+	margin-top: calcRem(10);
+	margin-bottom: calcRem(10);
+}
+
+html::-webkit-scrollbar-thumb {
+	background-color: $medium-gray;
+	border-radius: calcRem(6);
+}
+
+.blue {
+	color: $blue;
+}
+
+.gray {
+	color: $medium-gray;
+}
+
+.plus {
+	background-color: $white;
+
+	width: calcRem(38);
+	height: calcRem(38);
+
+	border-radius: calcRem(4);
+	margin-left: calcRem(6);
+
+	font-size: calcRem(20);
+
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.right-arrow,
+.left-arrow {
+	transform: translateY(-50%);
+
+	color: rgba(21, 28, 57, 0.753);
+	font-size: calcRem(46);
+
+	cursor: pointer;
+
+	opacity: 0;
+}
+
+.right-arrow {
+	position: fixed;
+
+	right: calcRem(14);
+	top: 50%;
+}
+
+.left-arrow {
+	position: fixed;
+
+	left: calcRem(14);
+	top: 50%;
+}
+
+.right-arrow:hover,
+.left-arrow:hover {
+	opacity: 1;
+	transition: 1s ease all;
+}
+
+.unpaid {
+	color: $yellow;
+}
+
+.overdue {
+	color: $red;
+}
+
+.payed {
+	color: $green;
+}

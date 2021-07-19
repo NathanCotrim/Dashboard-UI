@@ -1,0 +1,13 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
