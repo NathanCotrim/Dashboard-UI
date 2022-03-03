@@ -18,6 +18,7 @@ $red: rgb(217, 138, 140);
 
 section#folders {
 	width: 100%;
+	min-width: calcRem(1100);
 
 	margin-bottom: calcRem(80);
 

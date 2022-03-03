@@ -19,6 +19,7 @@ $red: rgb(217, 138, 140);
 
 section#payments {
 	width: 100%;
+	min-width: calcRem(1100);
 
 	.header-payments-container {
 		width: 100%;
@@ -262,7 +263,7 @@ section#payments {
 							align-items: flex-end;
 							flex-direction: row;
 
-							input[type="checkbox"] {
+							input[type='checkbox'] {
 								margin-right: calcRem(8);
 							}
 						}
@@ -292,7 +293,7 @@ section#payments {
 						font-size: calcRem(18);
 						font-weight: 600;
 
-						input[type="checkbox"] {
+						input[type='checkbox'] {
 							min-width: calcRem(22);
 							min-height: calcRem(22);
 							border: calcRem(0.6) solid $gray;
