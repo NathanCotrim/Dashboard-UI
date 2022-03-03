@@ -23,6 +23,7 @@ section#projects-todo {
 
 	min-height: calcRem(320);
 	width: 100%;
+	min-width: calcRem(1100);
 
 	margin-bottom: calcRem(80);
 
@@ -92,8 +93,7 @@ section#projects-todo {
 					justify-content: flex-start;
 
 					.task {
-						border-bottom: calcRem(1.5) solid
-							rgba(190, 191, 195, 0.4);
+						border-bottom: calcRem(1.5) solid rgba(190, 191, 195, 0.4);
 
 						margin-left: calcRem(16);
 						padding: calcRem(18);
@@ -105,7 +105,7 @@ section#projects-todo {
 						height: 100%;
 						width: 80%;
 
-						input[type="checkbox"] {
+						input[type='checkbox'] {
 							min-width: calcRem(22);
 							min-height: calcRem(22);
 							border: calcRem(0.6) solid $gray;
@@ -233,7 +233,7 @@ section#projects-todo {
 
 					h3 {
 						font-size: calcRem(18);
-						font-family: "Poppins", sans-serif;
+						font-family: 'Poppins', sans-serif;
 						font-weight: 500;
 					}
 
